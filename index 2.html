@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Activités</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="evo-calendar.min.css">
+        <link rel="stylesheet" href="evo-calendar.midnight-blue.min.css">
+    </head>
+    <body>
+        <div class="content">
+            <div id="calendar"></div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+        <script src="evo-calendar.min.js"></script>
+
+
+        <script>
+            $(document).ready(function() {
+                $('#calendar').evoCalendar({
+                    calendarEvents: [
+                        {
+                            id: 'Event1', // Event's ID (required)
+                            name: "Correction de l'exercice", // Event name (required)
+                            date: "April/26/2021", // Event date (required)
+                            description:"Bonjour cher tous. Travail insuffisant pour cette semaine.",
+                            type: "holiday", // Event type (required)
+                            everyYear: true // Same event every year (optional)
+                        },
+                        {
+                            name: "Cours à NaN",
+                            badge: "04/26 - 04/28", // Event badge (optional)
+                            date: ["April/26/2021", "April/28/2021"], // Date range
+                            description: "Formation en Développement web Front-End", // Event description (optional)
+                            type: "event",
+                            color: "#63d867" // Event custom color (optional)
+                        }
+                    ]
+                })
+            })
+        </script>
+    </body>
+</html>
